@@ -1,5 +1,5 @@
 FROM golang:alpine as builder
-LABEL version=0.0.1
+LABEL version=0.0.2
 RUN mkdir /build
 ADD . /build/
 WORKDIR /build

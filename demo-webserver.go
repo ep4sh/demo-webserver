@@ -13,7 +13,7 @@ type Config struct {
 }
 
 func main() {
-	config := Config{port: "8888", version: "0.0.1", msg: "exit(0)"}
+	config := Config{port: "8888", version: "0.0.2", msg: "exit(0)"}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hey, I'm demo-server app!\n")
 		fmt.Fprintf(w, "My message: %v\n", config.msg)
