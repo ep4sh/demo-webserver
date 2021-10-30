@@ -27,4 +27,16 @@ helm upgrade --install demo-webserver ./demo-webserver-helm-chart -f ./demo-webs
 ## Package
 ```
 helm package ./demo-webserver-helm-chart
-``
+```
+
+## Push to ChartMuseum
+```
+curl --data-binary "@demo-webserver-0.0.1.tgz" http://<your_host>:<port>/api/charts
+```
+
+### Install ChartMuseum
+```
+k create ns chm
+k ns chm
+helm install chm chartmuseum/chartmuseum --set env.open.DISABLE_API=false --set env.open.DEBUG=true
+```
