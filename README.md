@@ -17,7 +17,14 @@ docker -ti -p8888:8888 ep4sh/demo-webserver:$VERSION ;
 ```
 
 # Helm
+
+## Install
 ```
 k ns default
-helm upgrade --install demo-webserver ./helm-chart -f ./helm-chart/values.yaml
+helm upgrade --install demo-webserver ./demo-webserver-helm-chart -f ./demo-webserver-helm-chart/values.yaml
 ```
+
+## Package
+```
+helm package ./demo-webserver-helm-chart
+``
